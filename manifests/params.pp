@@ -25,6 +25,22 @@ class keepalived::params {
       $service_name       = 'keepalived'
     }
 
+        'Suse': {
+      $sysconf_dir        = 'sysconfig'
+      $sysconf_options    = '-D'
+      $config_dir         = '/etc/keepalived'
+      $config_dir_mode    = '0755'
+      $config_file_mode   = '0644'
+      $config_group       = 'root'
+      $config_owner       = 'root'
+      $daemon_group       = 'root'
+      $daemon_user        = 'root'
+      $pkg_list           = [ 'keepalived' ]
+      $service_hasstatus  = true
+      $service_hasrestart = true
+      $service_name       = 'keepalived'
+    }
+    
     'debian': {
       $sysconf_dir        = 'default'
       $sysconf_options    = ''
